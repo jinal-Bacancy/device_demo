@@ -1,0 +1,56 @@
+<style type="text/css">
+div {
+  font-size: 20px;
+}
+input{
+  border-color: #844919;
+    font-size: 20px;
+    background-color: #7d5723;
+    color: snow;
+}
+h1{
+  background: white;
+    margin: auto;
+    padding: 15px;
+}
+</style>
+<center>
+
+<h1>Log in</h1>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <table>
+    <tr>
+  <div class="field">
+    <td>Email :</td>
+    <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+  </div>
+  </tr>
+
+  <tr>
+  <div class="field">
+    <td>Password :</td>
+    <td><%= f.password_field :password, autocomplete: "off" %></td>
+  </div>
+  </tr>
+
+  <tr>
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <td colspan="2"><center><%= f.check_box :remember_me %>
+      Remember Me</center>
+      </td>
+    </div>
+  <% end -%>
+  </tr>
+
+  <tr>
+  <div class="actions">
+    <td colspan="2"><center><%= f.submit "Log in" %></center></td>
+  </div>
+  </tr>
+  </table>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</center>
