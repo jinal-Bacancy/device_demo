@@ -11,6 +11,15 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @student = Student.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name_of_your_choice",
+               template: "students/show.pdf.erb",
+               locals: {:student => @student}
+      end
+    end
   end
 
   # GET /students/new

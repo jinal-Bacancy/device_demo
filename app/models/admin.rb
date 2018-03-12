@@ -1,5 +1,5 @@
 class Admin < ApplicationRecord
-  
+	has_many :articles  
   after_create :send_admin_mail
   def send_admin_mail
     UserMailer.send_new_user_message(self).deliver_now
