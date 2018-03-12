@@ -9,6 +9,7 @@ gem 'acts_as_votable'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'whenever', require: false
+gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
