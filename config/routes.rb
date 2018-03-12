@@ -11,6 +11,6 @@ Rails.application.routes.draw do
 
   root 'students#index'
 
-  devise_for :admins, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  devise_for :admins, controllers: { omniauth_callbacks: 'admins/omniauth_callbacks' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
