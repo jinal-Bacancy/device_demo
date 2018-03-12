@@ -20,8 +20,10 @@ Rails.application.routes.draw do
 # 	get 'auth/:provider/callback', to: 'sessions#create'
 # get 'auth/failure', to: redirect('/')
 
-  devise_for :admins
-
+  devise_for :admins,
+             :controllers => { :registrations => "admins/registrations",
+             :omniauth_callbacks => 'admins/omniauth_callbacks',
+           }
 
  #  get '/admin/google_oauth2/callback', :to => 'omniauth_callbacks#google_oauth2'
 
