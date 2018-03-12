@@ -5336,3 +5336,214 @@ Processing by StudentsController#index as HTML
 Completed 200 OK in 1090ms (Views: 710.3ms | ActiveRecord: 56.6ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-12 13:57:12 +0530
+  
+LoadError (cannot load such file -- omniauth):
+  
+app/models/admin.rb:11:in `<class:Admin>'
+app/models/admin.rb:1:in `<top (required)>'
+config/routes.rb:10:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2018-03-12 14:12:11 +0530
+  [1m[35m (20.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as HTML
+  [1m[36mAdmin Load (20.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 ORDER BY "admins"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 1064ms (Views: 911.6ms | ActiveRecord: 50.4ms)
+
+
+Started DELETE "/admins/sign_out" for 127.0.0.1 at 2018-03-12 14:12:18 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Gi0oRfuC7jSDgBLsUtUBwuYyqIZV2wLUnuso03G4mOovTApuR6rnExdsVgNVgdapIJIh/D3u+CSjpOXjX5eXig=="}
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 ORDER BY "admins"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 122ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-12 14:12:18 +0530
+Processing by StudentsController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-03-12 14:12:18 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (194.9ms)
+Completed 401 Unauthorized in 211ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `admin_omniauth_authorize_path' for #<#<Class:0x007ff1c08a8748>:0x007ff1e025e548>
+Did you mean?  admin_google_oauth2_omniauth_authorize_path):
+    16: </style>
+    17: <center>
+    18: 
+    19: <%= link_to "Sign in with Google", admin_omniauth_authorize_path(:google_oauth2) %>
+    20: 
+    21: <h1>Log in</h1>
+    22: 
+  
+app/views/devise/sessions/new.html.erb:19:in `_app_views_devise_sessions_new_html_erb___1795975641134099947_70338412210340'
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-03-12 14:13:02 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (55.7ms)
+Completed 200 OK in 86ms (Views: 82.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2018-03-12 14:13:15 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pTvSPmzPxhLGMmSjFBx7WHDnzvGO/fektgQlyjcX6N3Sq/Gu+YxGxbHfovZ/NNZYMU/SOeO91lJ2hvCuIh2IYw==", "admin"=>{"email"=>"jinu.21.jv@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = $1 ORDER BY "admins"."id" ASC LIMIT $2[0m  [["email", "jinu.21.jv@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "admins" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "last_sign_in_ip" = $3, "sign_in_count" = $4, "updated_at" = $5 WHERE "admins"."id" = $6[0m  [["current_sign_in_at", "2018-03-12 08:43:16.063293"], ["last_sign_in_at", "2018-03-12 04:33:17.452975"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 3], ["updated_at", "2018-03-12 08:43:16.064638"], ["id", 10]]
+  [1m[35m (21.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 744ms (ActiveRecord: 22.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-12 14:13:16 +0530
+Processing by StudentsController#index as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 ORDER BY "admins"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-12 14:13:38 +0530
+  
+ArgumentError (Invalid route name, already in use: 'new_admin_session' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:23:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2018-03-12 14:14:12 +0530
+Processing by StudentsController#index as HTML
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 ORDER BY "admins"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 80ms (Views: 36.6ms | ActiveRecord: 15.7ms)
+
+
+Started DELETE "/admins/sign_out" for 127.0.0.1 at 2018-03-12 14:14:23 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pKYOsWx9VEePLaN9+Y0HN5YgfpMfSIbLcrQ5uKrQ6uGi6IIhVBCnTJs0SMSeZ8R1eohSogOAydI3Be9/ZjNDDQ=="}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 ORDER BY "admins"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-12 14:14:23 +0530
+Processing by StudentsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-03-12 14:14:23 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (164.6ms)
+Completed 401 Unauthorized in 169ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `admin_omniauth_authorize_path' for #<#<Class:0x007ff1d80342e8>:0x007ff1d802a130>
+Did you mean?  admin_google_oauth2_omniauth_authorize_path):
+    16: </style>
+    17: <center>
+    18: 
+    19: <%= link_to "Sign in with Google", admin_omniauth_authorize_path(:google_oauth2) %>
+    20: 
+    21: <h1>Log in</h1>
+    22: 
+  
+app/views/devise/sessions/new.html.erb:19:in `_app_views_devise_sessions_new_html_erb___1795975641134099947_70338343945440'
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-03-12 14:15:20 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 121ms (Views: 119.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/auth/google_oauth2.google_oauth2" for 127.0.0.1 at 2018-03-12 14:15:23 +0530
+  
+ActionController::RoutingError (uninitialized constant OmniauthCallbacksController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:190:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-03-12 14:16:06 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/auth/google_oauth2" for 127.0.0.1 at 2018-03-12 14:16:10 +0530
+Started GET "/admins/auth/google_oauth2" for 127.0.0.1 at 2018-03-12 14:16:10 +0530
