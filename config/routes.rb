@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 # 	get 'auth/:provider/callback', to: 'sessions#create'
 # get 'auth/failure', to: redirect('/')
 
-  devise_for :admins, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  devise_for :admins
+  get '/auth/google_oauth2/callback', :to => 'sessions#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
