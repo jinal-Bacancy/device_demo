@@ -7,18 +7,12 @@ Rails.application.routes.draw do
 	end
 	  
   resources :students
+  resources :admin_steps
  # devise_for :admins, controllers: { registrations: 'admins/registrations' }
 
   root 'students#index'
 
-#   devise_scope :admin do
-#     get "signup", to: "devise/registrations#new"
-#     get "login", to: "devise/sessions#new"
-#     get "logout", to: "devise/sessions#destroy"
-# 	end
 
-# 	get 'auth/:provider/callback', to: 'sessions#create'
-# get 'auth/failure', to: redirect('/')
 
   devise_for :admins,
              :controllers => { :registrations => "admins/registrations",
