@@ -1,0 +1,22 @@
+<%= form_for @admin, url: wizard_path do |f| %>
+	<div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name%>
+  </div>
+
+  <div>
+    <%= f.label :phoneno %><br>
+    <%= f.text_field :phoneno %>
+  </div>
+
+  <div class="field">
+    <%= f.label :DOB %><br />
+    <%= f.date_field :DOB %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save and Next" %> <!--  will move to the next page -->
+    <%= link_to 'Skip this Page', next_wizard_path %> <!-- will skip this step -->
+  </div>
+
+<% end %>
